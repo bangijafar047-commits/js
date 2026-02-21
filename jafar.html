@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Baby!</title>
+    <!-- Importing a cute font from Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;500&display=swap" rel="stylesheet">
+    <style>
+        /* --- THE CUTE STYLES --- */
+        body {
+            background-color: #ffe6e9; /* Soft Pink */
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            color: #5a4a4a;
+        }
+
+        h1, h2, .countdown {
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            color: #ff6b81;
+            font-size: 20px;
+            animation: floatUp 5s linear infinite;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        header {
+            padding: 50px 0;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px #fff;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            font-size: 1.5rem;
+            background: white;
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Letter Section */
+        .letter {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+            line-height: 1.6;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .letter::before {
+            content: "❤️";
+            font-size: 2rem;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffe6e9;
+            padding: 0 10px;
+        }
+
+        /* Photo Gallery (Polaroid Style) */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 10px 10px 30px 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+            width: 200px;
+        }
+
+        .polaroid:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0);
+            z-index: 10;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .caption {
+            font-family: 'Pacifico', cursive;
+            color: #888;
+            margin-top: 10px;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- JS will insert hearts here -->
+
+    <div class="container">
+        
+        <!-- 1. HERO SECTION -->
+        <header>
+            <h1>Happy Birthday!</h1>
+            <p>To the most beautiful person in the world.</p>
+            
+            <!-- Countdown Timer -->
+            <div class="countdown" id="countdown">Loading...</div>
+        </header>
+
+        <!-- 2. THE LOVE LETTER -->
+        <section class="letter">
+            <h2>A Note for You</h2>
+            <p>
+                Hey My dear world,<br><br>
+                23rd feb a veryyy imp day for me because a verry special person was born a person who is like angel ur the best women on thw earth after my Ammi really you r so mashallah really yaar ur jus a perfect girl in my life i cant imagine my life without you ur the ans of duas ur the gift from my lord ur just perfect samrah tera jasa koi nahi ho sakta ek shyri lhki ha aap ka lia uk na i love to do shyri specially on you so hear it is "HAM DUNIYAN MAI HAMSAFAR KI DUA KAR RAHE THA KHUDA NA HAMA FARYSHTA SA NAWAZ DIYA NA JANA HAM NA KYA ASA KAAM KIA KI HAMA TUM SA NAWAAZ DIA "wo kehta hai uppar wala na badi fursat sa banaya hai tumha itna acha dil itna Zada husssn MASHAAALH and yes I LOVEEEEEEEEEEEE YOUUUUUUUU!!!!!!!
+<br><br>
+                I hope you like this little website I coded for you!<br><br>
+                I love you more than biryani 🍗<br>
+                - YOUR JAFFY
+            </p>
+        </section>
+
+        <!-- 3. PHOTO GALLERY -->
+        <section class="gallery">
+            <!-- REPLACE 'YOUR_PHOTO.jpg' WITH YOUR ACTUAL IMAGE FILES -->
+            
+            <div class="polaroid">
+                <img src="s.jpeg" alt="Us">
+                <div class="caption">my world </div>
+            </div>
+
+            <div class="polaroid">
+                <img src="j.jpeg" alt="Us">
+                <div class="caption">best girl on the planet</div>
+            </div>
+
+            <div class="polaroid">
+                <img src="g.jpeg" alt="Her">
+                <div class="caption">My favorite person</div>
+            </div>
+            
+            <!-- Add more polaroids as needed -->
+        </section>
+
+        <footer>
+            Made with ❤️ by your BANDAR 
+        </footer>
+
+    </div>
+
+    <script>
+        // --- 1. COUNTDOWN TIMER SCRIPT ---
+        // Set the date we're counting down to (Change the date here)
+        const birthday = new Date("Oct 25, 2024 00:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = birthday - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "HAPPY BIRTHDAY! 🎉";
+            }
+        }, 1000);
+
+        // --- 2. FLOATING HEARTS SCRIPT ---
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            
+            // Random positioning
+            heart.style.left = Math.random() * 100 + 'vw';
+            
+            // Random animation speed
+            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
+            
+            // Random size
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.body.appendChild(heart);
+
+            // Remove heart after animation to keep page clean
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Create a heart every 500 milliseconds
+        setInterval(createHeart, 500);
+
+    </script>
+</body>
+</html>
